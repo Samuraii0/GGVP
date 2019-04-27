@@ -1,0 +1,51 @@
+@import '../libs/_layout.less';
+.main-header {
+    background-color: rgba(16, 22, 54, .2);
+    .header-nav {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        .container();
+    }
+    .logo {
+        font-size: 21px;
+        font-weight: 900px;
+        color: @white;
+    }
+    .menu-burger {
+        display: none;
+    }
+    .header-menu {
+        .flexList();
+        margin-left: auto;
+        height: 100%;
+        align-items: center;
+        .menu-item {
+            padding: 0 15px;
+            height: 100%;
+            &.before {
+                content: '';
+                display: block;
+                width: 0;
+                margin: auto;
+                height: 1px;
+                background-color: @blue;
+                transition: transform 800ms, ease-out;
+            }
+            &.active::before, &:hover::before {
+                width: 100%;                
+            }
+            a {
+                display: inline-block;
+                height: 100%;
+                line-height: 50px;
+                text-decoration: none;
+                color: @white;
+                font-weight: 100;
+                font-size: 12px;
+                // padding-top: 20px;
+                // padding-bottom: 20px;
+            }
+        }
+    }
+}
